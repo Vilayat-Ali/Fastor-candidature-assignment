@@ -16,10 +16,10 @@ import authMiddleware from "../middleware/authMiddleware";
 const enquiryRouter = express.Router();
 
 // register a new user
-enquiryRouter.get("/get/no-claim", getAllEnquiriesWithoutClaim);
-enquiryRouter.get("/get/claim", getAllEnquiriesWithClaim);
+enquiryRouter.get("/get/no-claim", authMiddleware, getAllEnquiriesWithoutClaim);
+enquiryRouter.get("/get/claim", authMiddleware, getAllEnquiriesWithClaim);
 enquiryRouter.post("/add", addEnquiry);
-enquiryRouter.put("/claim", claimTheLead);
+enquiryRouter.put("/claim", authMiddleware, claimTheLead);
 
 // exporting router
 export default enquiryRouter;
