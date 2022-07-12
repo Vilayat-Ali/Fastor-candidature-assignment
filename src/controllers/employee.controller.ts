@@ -6,7 +6,7 @@ import employeeModel from "../models/employee.model";
 
 // importing helper functions
 import { encrypt, verifyHash } from "../helper/hash";
-import { generateAccessToken } from "../auth/auth";
+import { generateAccessToken, generateRefreshToken } from "../auth/auth";
 
 // register a new employee and save to database
 export const registerEmployee = async (req: Request, res: Response) => {
@@ -48,9 +48,15 @@ export const loginEmployee = async (req: Request, res: Response) => {
           message: "Invalid credentials",
         });
       } else {
+        // generating new accesstoken
+        const access_token = generateAccessToken(email, 2);
+        // generating new refreshtoken
+        const refresh_token = generateRefreshToken(email);
         return res.status(200).json({
           success: true,
           message: "Logged In",
+          access_token,
+          refresh_token
         });
       }
     }
