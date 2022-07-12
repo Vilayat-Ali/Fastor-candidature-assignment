@@ -1,0 +1,40 @@
+{
+  "name": "fastor-assignment-crm-api",
+  "version": "1.0.0",
+  "description": "This is a CRM api made using NodeJS as fastor job application assignment",
+  "main": "build/server.js",
+  "author": "Syed Vilayat Ali Rizvi",
+  "license": "MIT",
+  "scripts": {
+    "build": "tsc -p .",
+    "start": "node build/server.js",
+    "dev": "nodemon --exec ts-node src/server.ts"
+  },
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "compression": "^1.7.4",
+    "consola": "^2.15.3",
+    "cors": "^2.8.5",
+    "dotenv": "^16.0.1",
+    "express": "^4.18.1",
+    "helmet": "^5.1.0",
+    "jsonwebtoken": "^8.5.1",
+    "mongoose": "^6.4.4",
+    "typescript": "^4.7.4"
+  },
+  "devDependencies": {
+    "@types/bcryptjs": "^2.4.2",
+    "@types/compression": "^1.7.2",
+    "@types/consola": "^2.2.5",
+    "@types/cors": "^2.8.12",
+    "@types/dotenv": "^8.2.0",
+    "@types/express": "^4.17.13",
+    "@types/helmet": "^4.0.0",
+    "@types/jsonwebtoken": "^8.5.8",
+    "@types/mongoose": "^5.11.97",
+    "@types/node": "^18.0.3",
+    "@types/nodemon": "^1.19.1",
+    "nodemon": "^2.0.19",
+    "ts-node": "^10.8.2"
+  }
+}
