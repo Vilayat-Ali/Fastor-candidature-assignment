@@ -19,7 +19,6 @@ export const registerEmployee = async (req: Request, res: Response) => {
       email,
       password: hashedPassword,
     });
-    console.log(newEmployeeInstance);
     const status = await newEmployeeInstance.save();
     const access_token = generateAccessToken(newEmployeeInstance.email, 2);
     return res.status(200).json({
